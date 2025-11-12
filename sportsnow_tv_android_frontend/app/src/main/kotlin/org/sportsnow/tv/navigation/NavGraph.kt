@@ -3,7 +3,10 @@ package org.sportsnow.tv.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.navigation.NavType
-import androidx.navigation.compose.*
+import androidx.navigation.navArgument
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import org.sportsnow.tv.ui.details.DetailsScreen
 import org.sportsnow.tv.ui.home.HomeScreen
 import org.sportsnow.tv.ui.player.HighlightsPlayerScreen

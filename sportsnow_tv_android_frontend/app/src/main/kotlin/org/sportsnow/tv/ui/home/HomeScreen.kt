@@ -22,7 +22,6 @@ import androidx.compose.ui.input.key.onPreviewKeyEvent
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.material3.Surface
-import androidx.compose.material3.SurfaceDefaults
 import kotlinx.coroutines.flow.collectLatest
 import org.sportsnow.tv.data.Repository
 import org.sportsnow.tv.data.model.Match

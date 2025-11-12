@@ -2,10 +2,7 @@ androidApplication {
     namespace = "org.sportsnow.tv"
 
     dependencies {
-        repositories {
-            google()
-            mavenCentral()
-        }
+        // repositories block is not allowed in module DCL; repositories are defined in settings.gradle.dcl
 
         // Compose BOM and core (versions managed by BOM where supported)
         implementation(platform("androidx.compose:compose-bom:2024.10.01"))
@@ -13,10 +10,14 @@ androidApplication {
         implementation("androidx.compose.ui:ui")
         implementation("androidx.compose.ui:ui-tooling-preview")
         implementation("androidx.compose.foundation:foundation")
+        // Units like dp/sp
+        implementation("androidx.compose.ui:ui-unit")
         implementation("androidx.compose.material3:material3:1.3.0")
 
         // Navigation
         implementation("androidx.navigation:navigation-compose:2.8.3")
+        // Ensure navigation argument helpers are available (pulled with navigation-compose but being explicit is harmless)
+        implementation("androidx.navigation:navigation-runtime-ktx:2.8.3")
 
         // TV dependencies: Using Compose-based UI; Leanback not required.
         // If needed later, add stable Leanback 1.1.0 when available in repos.
