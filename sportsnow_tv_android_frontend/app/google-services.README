@@ -1,0 +1,5 @@
+Do not commit google-services.json to source control.
+To enable Firebase fully:
+- Obtain google-services.json for the org.sportsnow.tv applicationId.
+- Place it under: app/google-services.json
+- Apply the Google Services plugin at the root if migrating away from Declarative DSL (not required for guarded initialization used here).
