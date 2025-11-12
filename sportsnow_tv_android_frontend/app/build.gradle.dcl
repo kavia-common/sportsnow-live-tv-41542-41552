@@ -2,6 +2,11 @@ androidApplication {
     namespace = "org.sportsnow.tv"
 
     dependencies {
+        repositories {
+            google()
+            mavenCentral()
+        }
+
         // Compose BOM and core (versions managed by BOM where supported)
         implementation(platform("androidx.compose:compose-bom:2024.10.01"))
         implementation("androidx.activity:activity-compose:1.9.3")
@@ -13,9 +18,8 @@ androidApplication {
         // Navigation
         implementation("androidx.navigation:navigation-compose:2.8.3")
 
-        // TV dependencies (use stable Leanback rather than preview androidx.tv)
-        implementation("androidx.leanback:leanback:1.2.0-alpha05")
-        implementation("androidx.leanback:leanback-preference:1.1.0-rc01")
+        // TV dependencies: Using Compose-based UI; Leanback not required.
+        // If needed later, add stable Leanback 1.1.0 when available in repos.
 
         // Lifecycle/Coroutines
         implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.6")

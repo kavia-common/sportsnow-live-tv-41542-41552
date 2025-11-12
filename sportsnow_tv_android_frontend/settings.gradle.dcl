@@ -1,8 +1,12 @@
 pluginManagement {
     repositories {
+        // Ensure Google repository comes first for AndroidX artifacts
         google()
         gradlePluginPortal()
+        mavenCentral()
     }
+    // In Declarative Gradle, repository resolution for dependencies is driven from pluginManagement in settings.
+    // Ensure both google() and mavenCentral() are available globally.
 }
 
 plugins {

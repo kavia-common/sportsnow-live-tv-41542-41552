@@ -94,7 +94,7 @@ private fun MatchCard(match: Match, onClick: () -> Unit) {
                 Spacer(Modifier.height(6.dp))
                 Text(
                     text = "${match.homeScore} - ${match.awayScore}",
-                    style = MaterialTheme.typTypography(),
+                    style = MaterialTheme.typography.titleLarge,
                     color = MaterialTheme.colorScheme.primary
                 )
             }
@@ -119,5 +119,4 @@ private fun MatchCard(match: Match, onClick: () -> Unit) {
     }
 }
 
-@Composable
-private fun MaterialTheme.typTypography() = this.typography.titleLarge
+
