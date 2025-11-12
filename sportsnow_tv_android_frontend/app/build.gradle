@@ -1,0 +1,65 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    // Apply Google services only if needed:
+    // id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'org.sportsnow.tv'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'org.sportsnow.tv'
+        minSdk 30
+        targetSdk 34
+        versionCode 1
+        versionName '1.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.activity:activity-ktx:1.9.3'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.8.6'
+
+    // Optional navigation libs present in DCL; keep if source references them later
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.8.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.8.3'
+
+    // Media3 playback (used by codebase for highlights playback)
+    implementation "androidx.media3:media3-exoplayer:1.4.1"
+    implementation "androidx.media3:media3-ui:1.4.1"
+
+    // Firebase BOM and KTX libraries (guarded in App.kt/FirestoreService)
+    implementation platform("com.google.firebase:firebase-bom:33.4.0")
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    // Module dependencies if required in the future (not currently referenced directly)
+    // implementation project(':utilities')
+    // implementation project(':list')
+}
