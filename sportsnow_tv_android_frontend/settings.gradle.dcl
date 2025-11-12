@@ -1,12 +1,10 @@
 pluginManagement {
     repositories {
-        // Ensure Google repository comes first for AndroidX artifacts
+        // Keep minimal, valid DCL repository configuration for plugins and dependencies resolution
         google()
-        gradlePluginPortal()
         mavenCentral()
+        gradlePluginPortal()
     }
-    // In Declarative Gradle, repository resolution for dependencies is driven from pluginManagement in settings.
-    // Ensure both google() and mavenCentral() are available globally.
 }
 
 plugins {

@@ -4,20 +4,14 @@ androidApplication {
     dependencies {
         // repositories block is not allowed in module DCL; repositories are defined in settings.gradle.dcl
 
-        // Compose BOM and core (versions managed by BOM where supported)
-        implementation(platform("androidx.compose:compose-bom:2024.10.01"))
-        implementation("androidx.activity:activity-compose:1.9.3")
-        implementation("androidx.compose.ui:ui")
-        implementation("androidx.compose.ui:ui-tooling-preview")
-        implementation("androidx.compose.foundation:foundation")
-        // Units like dp/sp
-        implementation("androidx.compose.ui:ui-unit")
-        implementation("androidx.compose.material3:material3:1.3.0")
-
-        // Navigation
-        implementation("androidx.navigation:navigation-compose:2.8.3")
-        // Ensure navigation argument helpers are available (pulled with navigation-compose but being explicit is harmless)
-        implementation("androidx.navigation:navigation-runtime-ktx:2.8.3")
+        // Remove Compose dependencies to avoid inline compiler issues in CI (Compose not allowed by project rules)
+        implementation("androidx.appcompat:appcompat:1.7.0")
+        implementation("com.google.android.material:material:1.12.0")
+        implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+        implementation("androidx.core:core-ktx:1.13.1")
+        // Navigation (non-Compose not used currently, placeholder if needed)
+        implementation("androidx.navigation:navigation-fragment-ktx:2.8.3")
+        implementation("androidx.navigation:navigation-ui-ktx:2.8.3")
 
         // TV dependencies: Using Compose-based UI; Leanback not required.
         // If needed later, add stable Leanback 1.1.0 when available in repos.

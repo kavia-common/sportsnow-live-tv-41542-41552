@@ -14,7 +14,8 @@
         android:banner="@drawable/ic_app_logo">
         <activity
             android:name="org.sportsnow.tv.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
